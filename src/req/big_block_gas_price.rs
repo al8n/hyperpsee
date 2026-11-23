@@ -10,10 +10,17 @@ impl BigBlockGasPriceRequest {
   pub const fn new() -> Self {
     Self(())
   }
+
+  /// Returns the RPC method name for the request.
+  #[inline(always)]
+  pub const fn method_name() -> &'static str {
+    "eth_bigBlockGasPrice"
+  }
 }
 
 impl ToRpcParams for BigBlockGasPriceRequest {
-  fn to_rpc_params(self) -> Result<Option<Box<jsonrpsee::core::JsonRawValue>>, serde_json::Error> {
-    jsonrpsee::core::params::ArrayParams::new().to_rpc_params()
+  #[inline(always)]
+  fn to_rpc_params(self) -> super::RpcResult {
+    Ok(None)
   }
 }

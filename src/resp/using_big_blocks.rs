@@ -14,6 +14,7 @@
 )]
 #[cfg_attr(feature = "serde", derive(serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(transparent))]
+#[display("{_0}")]
 pub struct UsingBigBlocksResponse(bool);
 
 impl UsingBigBlocksResponse {

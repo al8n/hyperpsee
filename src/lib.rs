@@ -3,6 +3,7 @@
 #![cfg_attr(docsrs, allow(unused_attributes))]
 #![deny(missing_docs)]
 
+pub use endpoint::Client;
 pub use req::*;
 pub use resp::*;
 
