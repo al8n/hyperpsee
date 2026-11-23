@@ -13,16 +13,18 @@ use alloy_primitives::U256;
   derive_more::From,
   derive_more::Into,
   derive_more::Display,
+  derive_more::AsRef,
+  derive_more::Deref,
 )]
 #[cfg_attr(feature = "serde", derive(serde::Deserialize))]
 #[cfg_attr(feature = "serde", serde(transparent))]
 #[display("{_0} wei/gas")]
-pub struct BigBlockGasPrice(U256);
+pub struct BigBlockGasPriceResponse(U256);
 
-impl BigBlockGasPrice {
+impl BigBlockGasPriceResponse {
   /// Returns the base fee in wei per gas.
   #[inline(always)]
-  pub const fn get(&self) -> &U256 {
+  pub const fn value(&self) -> &U256 {
     &self.0
   }
 }
